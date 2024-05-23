@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling while loading */
+        }
+
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Background color of the preloader */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            /* width: 150px; Adjust the size of the logo as needed */
+            height: auto;
+            margin-bottom: 20px; /* Add spacing between the logo and loader */
+            animation: fadeInOut 4s ease-in-out infinite; /* Fading in and out animation */
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; } /* Fade in */
+            25% { opacity: 1; } /* Stay visible */
+            75% { opacity: 1; } /* Stay visible */
+            100% { opacity: 0; } /* Fade out */
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3; 
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite, changeColor 10s linear infinite; /* Spin animation and color change animation */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes changeColor {
+            0% { border-top-color: #3498db; } /* Blue */
+            25% { border-top-color: #2ecc71; } /* Green */
+            50% { border-top-color: #e74c3c; } /* Red */
+            75% { border-top-color: #f39c12; } /* Orange */
+            100% { border-top-color: #9b59b6; } /* Purple */
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <!-- Company logo -->
+        <img src="./img/logo/logo2.png" alt="Company Logo" class="logo">
+        <!-- <h1 class="logo">BIOMETRIC FINGERPRINT ATTENDANCE SYSTEM</h1> -->
+        
+        <!-- Loading spinner -->
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        // Simulate a delay of 3 seconds to demonstrate loading
+        setTimeout(() => {
+            // Redirect to the main page after the delay
+            window.location.href = "index.php";
+        }, 10000);
+    </script>
+</body>
+</html>
